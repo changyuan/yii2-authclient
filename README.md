@@ -1,5 +1,4 @@
 # Yii Authclient for Weibo,QQ,Wechat and etc.
-==============================
 [![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2-authclient/v/stable.png)](https://packagist.org/packages/yiisoft/yii2-authclient)
 [![Total Downloads](https://poser.pugx.org/yiisoft/yii2-authclient/downloads.png)](https://packagist.org/packages/yiisoft/yii2-authclient)
 [![Build Status](https://travis-ci.org/yiisoft/yii2-authclient.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-authclient)

@@ -53,3 +53,28 @@ to the `require` section of your composer.json.
     // other components
 ]
 ```
+## in view
+```
+ //The first way in view：
+ <?= yii\authclient\widgets\AuthChoice::widget([
+    'baseAuthUrl' => ['site/auth']
+ ]); ?>
+ 
+ //The second way in view:
+  <?php
+  use yii\authclient\widgets\AuthChoice;
+  ?>
+  <?php $authAuthChoice = AuthChoice::begin([
+      'baseAuthUrl' => ['site/auth']
+  ]); ?>
+  <ul>
+  <?php foreach ($authAuthChoice->getClients() as $client): ?>
+      <li><?= $authAuthChoice->clientLink($client) ?></li>
+  <?php endforeach; ?>
+  </ul>
+  <?php AuthChoice::end(); ?>
+```
+
+
+[参考](https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide/quick-start.md)
+

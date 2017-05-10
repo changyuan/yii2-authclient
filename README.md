@@ -1,4 +1,4 @@
-Yii Authclient for Weibo,QQ,Wechat
+Yii Authclient for Weibo,QQ,Wechat and etc.
 
 ```
 'components' => [

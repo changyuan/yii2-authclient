@@ -5,7 +5,6 @@
 [![Build Status](https://travis-ci.org/yiisoft/yii2-authclient.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-authclient)
 
 ## Installation
-------------
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
@@ -24,7 +23,6 @@ or add
 to the `require` section of your composer.json.
 
 ## Usage
-
 ```
 'components' => [
     'authClientCollection' => [

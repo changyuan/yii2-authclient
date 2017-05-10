@@ -1,0 +1,20 @@
+{
+    "name": "changyuan/yii2-authclient",
+    "description": "yii2-authclient for qq weibo wechat",
+    "keywords": ["yii2", "OAuth", "OpenID", "auth", "api"],
+    "type": "composer-pllugin",
+    "require": {
+        "yiisoft/yii2-authclient": "~2.1.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "changcrazy",
+            "email": "changocean@163.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload":{
+        "psr-4": { "changyuan\\authclient\\": "" }
+    }
+}

@@ -108,8 +108,8 @@ class Wechat extends OAuth2
         $authState = $this->getState('authState');
         if (!isset($_REQUEST['state']) || empty($authState) || strcmp($_REQUEST['state'], $authState) !== 0) {
             throw new HttpException(400, 'Invalid auth state parameter.');
-        #} else {
-            #$this->removeState('authState');
+        } else {
+            $this->removeState('authState');
         }
 
         $params['appid'] = $this->clientId;
@@ -121,20 +121,27 @@ class Wechat extends OAuth2
     /**
      * @inheritdoc
      */
-    protected function apiInternal($accessToken, $url, $method, array $params, array $headers)
-    {
-        $params['access_token'] = $accessToken->getToken();
-        $params['openid'] = $accessToken->getParam('openid');
-        $params['lang'] = 'zh_CN';
-        return $this->sendRequest($method, $url, $params, $headers);
-    }
+    // protected function apiInternal($accessToken, $url, $method, array $params, array $headers)
+    // {
+    //     $params['access_token'] = $accessToken->getToken();
+    //     $params['openid'] = $accessToken->getParam('openid');
+    //     $params['lang'] = 'zh_CN';
+    //     return $this->sendRequest($method, $url, $params, $headers);
+    // }
 
     /**
      * @inheritdoc
      */
     protected function initUserAttributes()
     {
-        return $this->api('sns/userinfo');
+        $accessToken = $this->getAccessToken();
+        $data = [
+            'access_token' => $accessToken->getToken(),
+            'openid' => $accessToken->getParam('openid'),
+            'lang' => 'zh-CN'
+        ];
+
+        return $this->api('sns/userinfo','GET',$data);
 //        $userAttributes['id'] = $userAttributes['unionid'];
 //        return $userAttributes;
     }

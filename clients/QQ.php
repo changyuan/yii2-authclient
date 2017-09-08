@@ -79,8 +79,8 @@ class QQ extends OAuth2
         $authState = $this->getState('authState');
         if (!isset($_REQUEST['state']) || empty($authState) || strcmp($_REQUEST['state'], $authState) !== 0) {
             throw new HttpException(400, 'Invalid auth state parameter.');
-        } else {
-            $this->removeState('authState');
+        #} else {
+           # $this->removeState('authState');
         }
 
 		return parent::fetchAccessToken($authCode, $params);

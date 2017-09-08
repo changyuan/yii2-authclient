@@ -78,3 +78,11 @@ to the `require` section of your composer.json.
 
 [参考](https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide/quick-start.md)
 
+
+## Q&A
+
+ Q: this error "Invalid auth state parameter." ?
+
+ A: remove sub class `$this->removeState('authState');`  
+
+
